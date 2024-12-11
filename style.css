@@ -1,73 +1,80 @@
-/* تعديل الهيدر */
+/* الأساسيات */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+/* تخصيص الهيدر */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url('https://hatvn.com/wp-content/uploads/2023/02/logo-jotun.png'); /* إضافة الصورة */
-  background-size: cover; /* تغطية المساحة بالكامل */
-  background-position: center; /* جعل الصورة في المنتصف */
-  background-repeat: no-repeat; /* منع تكرار الصورة */
-  height: 200px; /* ارتفاع الهيدر */
-  padding: 0 20px;
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
   position: relative;
-  box-shadow: 0 4px 8px rgb(0, 0, 0); /* ظل لإبراز الهيدر */
+  height: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: url('https://hatvn.com/wp-content/uploads/2023/02/logo-jotun.png'); /* إضافة الصورة */
+  background-size: cover; /* لتغطية كامل المساحة */
+  background-position: center; /* وضع الصورة في المنتصف */
+  background-repeat: no-repeat; /* عدم تكرار الصورة */
 }
 
 /* تخصيص الشعار */
 .header-logo {
-  height: 0px; /* تعديل ارتفاع الشعار */
-  object-fit: contain; /* الحفاظ على تناسب الصورة */
+  height: 80px;
+  object-fit: contain;
 }
 
-
-/* تخصيص اسم الصفحة داخل الهيدر */
 .site-name {
-  color: #ffffff; /* تغيير اللون إلى الأبيض */
-  font-size: 80px;
-  font-weight: bold;
-  margin: 0;
+  font-size: 30px;
   text-align: center;
 }
 
 /* تخصيص زر عربة المشتريات */
 .cart-button {
-  position: absolute;
-  right: 20px;
+  position: absolute; /* تغيير إلى absolute لجعل الزر في مكان ثابت */
+  right: 20px; /* نقله إلى الجهة اليمنى */
+  top: 50%; /* لتوسيط الزر عموديًا */
+  transform: translateY(-50%); /* لضبط الزر في منتصف الهيدر عموديًا */
   background-color: #d7ee74;
   color: white;
-  padding: 15px 25px;
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .cart-button:hover {
   background-color: #e90b0b;
 }
 
-/* تخصيص عرض المنتجات باستخدام Flexbox */
+/* تخصيص عرض المنتجات */
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 10px;
-  padding: 10px;
-  position: relative;
-  z-index: 10; /* لضمان ظهور المنتجات فوق الخلفية */
+  margin-top: 20px;
+  padding: 20px;
 }
 
 /* تخصيص شكل كل منتج */
 .product {
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgb(0, 0, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
   text-align: center;
-  width: 160px;
-  margin: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 200px;
+  margin: 10px;
 }
 
 .product img {
@@ -75,17 +82,6 @@ header {
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
-}
-
-.product h3 {
-  font-size: 18px;
-  color: #000000;
-  margin-top: 10px;
-}
-
-.product p {
-  font-size: 16px;
-  color: #000000;
 }
 
 .product button {
@@ -98,59 +94,21 @@ header {
   border-radius: 15px;
 }
 
-.product button:hover {
-  background-color: #ff0000;
-}
-
 /* تخصيص عربة المشتريات */
 .cart-sidebar {
   position: fixed;
   top: 0;
-  left: -400px; /* خارج الشاشة */
+  right: -400px; /* خارج الشاشة */
   width: 400px;
   height: 100%;
   background-color: #000000;
-  color: white;
-  transition: left 0.3s ease;
+  color: rgb(255, 255, 255);
+  transition: right 0.3s ease-in-out;
   padding: 20px;
   z-index: 100;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-}
-
-.cart-sidebar h2 {
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 24px;
-}
-
-.cart-sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.cart-sidebar li {
-  margin: 10px 0;
-  font-size: 18px;
-  color: #ddd;
-}
-
-.cart-sidebar button {
-  background-color: #4f0ad1;
-  color: rgb(252, 252, 252);
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-.cart-sidebar button:hover {
-  background-color: #ff0000;
 }
 
 .cart-sidebar .close {
@@ -162,7 +120,7 @@ header {
   cursor: pointer;
 }
 
-/* تخصيص زر القائمة (ثلاث شرطات) */
+/* تخصيص قائمة المينيو */
 .menu-button {
   background-color: transparent;
   border: none;
@@ -174,6 +132,85 @@ header {
   top: 20px;
 }
 
-.menu-button:hover {
-  color: #ff5733; /* تغيير اللون عند التمرير */
+/* استعلامات الوسائط لتحسين الموبايل */
+@media (max-width: 768px) {
+  .site-name {
+      font-size: 24px; /* تصغير اسم الموقع */
+  }
+
+  header {
+      padding: 10px 15px;
+  }
+
+  .product {
+      width: 150px; /* تصغير حجم المنتجات */
+      margin: 5px;
+  }
+
+  .product img {
+      height: 120px; /* تصغير الصور */
+  }
+
+  .cart-button {
+    position: absolute; /* تغيير إلى absolute لجعل الزر في مكان ثابت */
+    right: 20px; /* نقله إلى الجهة اليمنى */
+    top: 50%; /* لتوسيط الزر عموديًا */
+    transform: translateY(-50%); /* لضبط الزر في منتصف الهيدر عموديًا */
+    background-color: #d7ee74;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .cart-sidebar {
+      width: 300px; /* تقليص عرض السلة */
+      padding: 15px; /* تقليص الحشو داخل السلة */
+  }
+
+  .cart-sidebar .close {
+      font-size: 25px; /* تصغير حجم زر الإغلاق */
+  }
+
+  .menu-button {
+      font-size: 25px; /* تصغير حجم زر القائمة */
+  }
+}
+
+@media (max-width: 480px) {
+  .site-name {
+      font-size: 18px; /* تصغير أكثر لاسم الموقع */
+  }
+
+  header {
+      flex-direction: column;
+      height: auto;
+  }
+
+  .product {
+      width: 120px; /* تصغير حجم المنتجات أكثر */
+      margin: 5px;
+  }
+
+  .product img {
+      height: 100px; /* تصغير الصور أكثر */
+  }
+
+  .cart-button {
+    padding: 6px 12px; /* تصغير الزر */
+  }
+
+  .cart-sidebar {
+      width: 250px; /* تقليص عرض السلة بشكل أكبر */
+      padding: 10px; /* تقليص الحشو داخل السلة */
+  }
+
+  .cart-sidebar .close {
+      font-size: 20px; /* تصغير زر الإغلاق بشكل أكبر */
+  }
+
+  .menu-button {
+      font-size: 20px; /* تصغير زر القائمة بشكل أكبر */
+  }
 }

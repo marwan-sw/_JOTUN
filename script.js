@@ -64,7 +64,7 @@ function updateCart() {
         cartItems.appendChild(cartItem);
         total += product.price;
     });
-    totalPrice.innerText = `الإجمالي: ${total} ريال`;
+    totalPrice.innerText = `الإجمالي: ${total} جم`;
     cartButton.innerText = `سلة المشتريات (${cart.length})`;
 }
 
@@ -74,14 +74,15 @@ function removeFromCart(index) {
     updateCart();
 }
 
-// فتح واغلاق السلة
+// فتح وإغلاق السلة
 cartButton.addEventListener('click', () => {
-    cartSidebar.style.left = '0'; // فتح السلة
+    cartSidebar.style.right = '0'; // السلة تظهر بالكامل من جهة اليمين
 });
 
 closeSidebar.addEventListener('click', () => {
-    cartSidebar.style.left = '-400px'; // إغلاق السلة
+    cartSidebar.style.right = '-400px'; // السلة تعود للخارج (تختفي)
 });
+
 
 // عرض المنتجات عند تحميل الصفحة
 displayProducts();
@@ -89,5 +90,4 @@ displayProducts();
 // زر القائمة
 const menuButton = document.getElementById('menuButton');
 menuButton.addEventListener('click', () => {
-    alert("تم الضغط على زر القائمة!");
 });
