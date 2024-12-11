@@ -1,0 +1,179 @@
+/* تعديل الهيدر */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('https://hatvn.com/wp-content/uploads/2023/02/logo-jotun.png'); /* إضافة الصورة */
+  background-size: cover; /* تغطية المساحة بالكامل */
+  background-position: center; /* جعل الصورة في المنتصف */
+  background-repeat: no-repeat; /* منع تكرار الصورة */
+  height: 200px; /* ارتفاع الهيدر */
+  padding: 0 20px;
+  position: relative;
+  box-shadow: 0 4px 8px rgb(0, 0, 0); /* ظل لإبراز الهيدر */
+}
+
+/* تخصيص الشعار */
+.header-logo {
+  height: 0px; /* تعديل ارتفاع الشعار */
+  object-fit: contain; /* الحفاظ على تناسب الصورة */
+}
+
+
+/* تخصيص اسم الصفحة داخل الهيدر */
+.site-name {
+  color: #ffffff; /* تغيير اللون إلى الأبيض */
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+/* تخصيص زر عربة المشتريات */
+.cart-button {
+  position: absolute;
+  right: 20px;
+  background-color: #d7ee74;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.cart-button:hover {
+  background-color: #e90b0b;
+}
+
+/* تخصيص عرض المنتجات باستخدام Flexbox */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10px;
+  padding: 10px;
+  position: relative;
+  z-index: 10; /* لضمان ظهور المنتجات فوق الخلفية */
+}
+
+/* تخصيص شكل كل منتج */
+.product {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0, 0, 0);
+  padding: 10px;
+  text-align: center;
+  width: 160px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product h3 {
+  font-size: 18px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.product p {
+  font-size: 16px;
+  color: #000000;
+}
+
+.product button {
+  background-color: #0d8046;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+.product button:hover {
+  background-color: #ff0000;
+}
+
+/* تخصيص عربة المشتريات */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  left: -400px; /* خارج الشاشة */
+  width: 400px;
+  height: 100%;
+  background-color: #000000;
+  color: white;
+  transition: left 0.3s ease;
+  padding: 20px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.cart-sidebar h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.cart-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.cart-sidebar li {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #ddd;
+}
+
+.cart-sidebar button {
+  background-color: #4f0ad1;
+  color: rgb(252, 252, 252);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.cart-sidebar button:hover {
+  background-color: #ff0000;
+}
+
+.cart-sidebar .close {
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgb(228, 0, 0);
+  cursor: pointer;
+}
+
+/* تخصيص زر القائمة (ثلاث شرطات) */
+.menu-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.menu-button:hover {
+  color: #ff5733; /* تغيير اللون عند التمرير */
+}
